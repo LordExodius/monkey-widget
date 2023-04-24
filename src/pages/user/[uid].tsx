@@ -10,6 +10,7 @@ const Profile = () => {
 
     const [profile, setProfile] = useState<any>({"data": {"name": "bruh"}})
     useEffect(() => {
+        if (!uid) { return }
         const getProfile = async () => {
             const res = await fetch(`https://api.monkeytype.com/users/${uid}/profile`)
             // const res = await fetch('https://jsonplaceholder.typicode.com/todos/1')

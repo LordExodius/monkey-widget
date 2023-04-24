@@ -15,6 +15,7 @@ const ProfileCard = ( user: any, extra: any ) => {
     console.log(user)
 
     const svgProps = {
+        xmlns: "http://www.w3.org/2000/svg",
         width: CARD_WIDTH,
         height: CARD_HEIGHT,
         viewBox: `0 0 ${CARD_WIDTH} ${CARD_HEIGHT}`,

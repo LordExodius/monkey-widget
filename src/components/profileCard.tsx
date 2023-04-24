@@ -61,7 +61,7 @@ const ProfileCard = ( user: any, extra: any ) => {
             {/* Profile Picture */}
             <image 
                 x="15"
-                y="10"
+                y="15"
                 width="45"
                 height="45"
                 href={extra.avatar}/>
@@ -69,7 +69,7 @@ const ProfileCard = ( user: any, extra: any ) => {
             {/* Name */}
             <text
                 x="70"
-                y="30"
+                y="35"
                 fill={OFF_WHITE}
                 fontFamily="monospace"
                 fontSize="1.6rem">{user.name ?? "unknown"}</text>
@@ -78,7 +78,7 @@ const ProfileCard = ( user: any, extra: any ) => {
             <a href={extra.link ?? "https://monkeytype.com"} target="_blank">
                 <text
                     x="70"
-                    y="50"
+                    y="55"
                     fontFamily="monospace"
                     fill={MIDDLE_GREY}
                     textAnchor="left">{extra.link ?? "link not found"}</text>

@@ -10,7 +10,7 @@ const OFF_WHITE = "#d1d0c5"
 const ProfileCard = ( user: any, extra: any ) => {
 
     if (!user || !user.personalBests) {
-        return <p>oops, we broke something</p>
+        console.log("damn, broke somthing")
     }
     console.log(user)
 
@@ -98,7 +98,6 @@ const ProfileCard = ( user: any, extra: any ) => {
             <text x="310" y="85" {...labelProps}>60 seconds</text>
             <text x="310" y="125" {...speedProps}>{user.personalBests.time[15] ? Math.round(user.personalBests.time[60][0].wpm) : "-"}</text>
             <text x="310" y="150" {...accProps}>{user.personalBests.time[15] ? `${Math.round(user.personalBests.time[60][0].acc)}%` : "-"}</text>
-
 
         </svg>)
 }

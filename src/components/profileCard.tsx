@@ -1,7 +1,7 @@
 
 
 const CARD_WIDTH = 390
-const CARD_HEIGHT = 180
+const CARD_HEIGHT = 170
 const DARK_GREY = "#2c2e31"
 const MIDDLE_GREY = "#a7a7a0"
 const LIGHT_GREY = "#646669"
@@ -60,7 +60,7 @@ const ProfileCard = ( user: any, extra: any ) => {
             </rect>
             {/* Profile Picture */}
             <image 
-                x="10"
+                x="15"
                 y="10"
                 width="45"
                 height="45"

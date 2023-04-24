@@ -1,12 +1,8 @@
 // pages/api/user/[uid].tsx
 
+import ProfileCard from '../../components/profileCard'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
-
-const getProfile = (uid: string) => {
-    return fetch(`http://api.monkeytype.com/users/${uid}/profile`)
-        .then(res => res.json())
-}
 
 const Profile = () => {
     const router = useRouter()
@@ -16,8 +12,10 @@ const Profile = () => {
     useEffect(() => {
         const getProfile = async () => {
             const res = await fetch(`http://api.monkeytype.com/users/${uid}/profile`)
+            // const res = await fetch('https://jsonplaceholder.typicode.com/todos/1')
             if (res.ok) {
-                setProfile(res.json())
+                const profileJSON = await res.json()
+                setProfile(profileJSON)
             }
             else {
                 console.log("fuck")
@@ -26,9 +24,26 @@ const Profile = () => {
         getProfile()
     }, [uid])
 
-    return (
-        <p>{profile.data.name}</p>
-    )
+
+    if (profile) {
+        console.log(`Successfully fetched profile ${uid}`)
+        const extraData = {
+            link: `https://monkeytype.com/profile/${uid}`,
+            avatar: "/placeholder_avatar.svg"
+        }
+
+        if (profile.data.discordId && profile.data.discordAvatar) {
+            extraData.avatar = `https://cdn.discordapp.com/avatars/${profile.data.discordId}/${profile.data.discordAvatar}.png`
+        }
+
+        return ProfileCard( profile.data, extraData )
+    }
+    else {
+        return (
+            <h1>No profile found!</h1>
+        )
+    }
+    
     
 }
 

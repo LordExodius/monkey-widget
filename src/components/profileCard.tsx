@@ -13,7 +13,7 @@ const ProfileCard = ( user: any, extra: any ) => {
         console.log("damn, broke somthing")
     }
     console.log(user)
-
+    
     const svgProps = {
         xmlns: "http://www.w3.org/2000/svg",
         width: CARD_WIDTH,
@@ -64,7 +64,7 @@ const ProfileCard = ( user: any, extra: any ) => {
                 y="10"
                 width="45"
                 height="45"
-                href={extra.avatar ?? "/placeholder_avatar.svg"}/>
+                href={extra.avatar}/>
             
             {/* Name */}
             <text

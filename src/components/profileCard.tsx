@@ -1,4 +1,4 @@
-
+// Component for profile card SVG
 
 const CARD_WIDTH = 390
 const CARD_HEIGHT = 170
@@ -9,8 +9,10 @@ const OFF_WHITE = "#d1d0c5"
 
 const ProfileCard = ( user: any, extra: any ) => {
 
+    // If user is nonexistent, fill with placeholder
     if (!user || !user.personalBests) {
-        console.log("damn, broke somthing")
+        user = { personalBests: {time: { } } }
+        extra.link = "https://monkeytype.com"
     }
     console.log(user)
     
